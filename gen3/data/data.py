@@ -1,4 +1,4 @@
-RESOURCE_PATH = './static/'
+from app import RESOURCE_PATH # RESOURCE_PATH = './static/'
 from numba_pokemon_prngs.data.personal import PersonalInfo3, PERSONAL_INFO_E
 
 with open(RESOURCE_PATH + "resources/text_natures.txt",encoding="utf-8") as text_natures:

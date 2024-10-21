@@ -29,7 +29,7 @@ enctypetomap = {
 def populate_routes(gamever,enctype):
     type = enctypetomap[enctype]
 
-    encounters = json.load(open(f"./static/resources/gen3/{gamever}_encounter.json"))
+    encounters = json.load(open(f"{RESOURCE_PATH}resources/gen3/{gamever}_encounter.json"))
 
     locations = []
 
@@ -46,7 +46,7 @@ def populate_routes(gamever,enctype):
 def populate_species(gamever,enctype,location):
     type = enctypetomap[enctype]
 
-    encounters = json.load(open(f"./static/resources/gen3/{gamever}_encounter.json"))
+    encounters = json.load(open(f"{RESOURCE_PATH}resources/gen3/{gamever}_encounter.json"))
 
     species = []
     table = None
@@ -80,7 +80,7 @@ def autofill(gamever,enctype,location,species):
 
     type = enctypetomap[enctype]
 
-    encounters = json.load(open(f"./static/resources/gen3/{gamever}_encounter.json"))
+    encounters = json.load(open(f"{RESOURCE_PATH}resources/gen3/{gamever}_encounter.json"))
 
     for _,l in enumerate(encounters["encounters"]):
         if l["map"] == location:
@@ -98,7 +98,7 @@ def check_wilds(tid,sid,filter,delay,method,lead,encounter,rseSafari,rock,leadop
     result = {}
 
     type = enctypetomap[encounter["type"]]
-    genc = json.load(open(f"./static/resources/gen3/{encounter['version']}_encounter.json"))
+    genc = json.load(open(f"{RESOURCE_PATH}resources/gen3/{encounter['version']}_encounter.json"))
     table = None
 
     for _,l in enumerate(genc["encounters"]):
